@@ -65,7 +65,7 @@
  - [x] matrix calculus
   - [matrix calculus: appendix D](https://www.cs.cmu.edu/~epxing/Class/10701-08s/recitation/mc.pdf)
   - [the matrix cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
- - [x] EM variational EM  
+ - [x] EM & variational EM  
   - [The Variational Approximation for Bayesian Inference ](http://www.cs.uoi.gr/~arly/papers/SPM08.pdf)
   - [pattern recognition and machine learning, chapter 9, 10](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
    - [lecture note](http://cs229.stanford.edu/notes/cs229-notes8.pdf)

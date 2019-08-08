@@ -31,7 +31,7 @@
  - [x] least square
  - [x] lasso 
  - [x] principal component analysis (PCA)
- - [  latent dirichlet allocation (LDA)
+ - [ ] latent dirichlet allocation (LDA)
   -[original paper](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf) 
   - [wiki](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) 
  - [x] independent component analysis (ICA)

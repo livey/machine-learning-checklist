@@ -28,7 +28,6 @@
  - [common kernel functions](https://data-flair.training/blogs/svm-kernel-functions/)
  - [x] linear regression 
  - [x] logistic regression
- - [x] least square
  - [x] lasso 
  - [x] principal component analysis (PCA)
  - [x] latent dirichlet allocation (LDA)

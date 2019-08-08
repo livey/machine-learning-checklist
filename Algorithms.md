@@ -1,9 +1,15 @@
----
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithms</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
 
----
-
-<p><strong>algorithms</strong></p>
+<body class="stackedit">
+  <div class="stackedit__html"><p><strong>algorithms</strong></p>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> decision tree</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> gradient boost decision tree</li>
@@ -99,4 +105,7 @@
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="true" disabled=""> overview of gradient descent optimization algorithms</li>
 <li><a href="http://ruder.io/optimizing-gradient-descent/">blog: optimizing-gradient-descent</a></li>
 </ul>
+</div>
+</body>
 
+</html>

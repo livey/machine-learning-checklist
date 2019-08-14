@@ -1,4 +1,4 @@
-## These resources I found useful are based on my EECS background. 
+### These resources I found useful are based on my EECS background. 
 **algorithms**
  - [x] decision tree 
  - [x] gradient boost decision tree

@@ -64,6 +64,7 @@
  - [blog: the clculus of variations"](http://bjlkeng.github.io/posts/the-calculus-of-variations/)
  - [x] ROC, PR 
   - [wiki: ROC, PR](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)
+ - [x] [precision & recall](https://en.wikipedia.org/wiki/Precision_and_recall)
  - [x] matrix calculus
   - [matrix calculus: appendix D](https://www.cs.cmu.edu/~epxing/Class/10701-08s/recitation/mc.pdf)
   - [the matrix cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)

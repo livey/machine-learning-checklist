@@ -61,7 +61,7 @@
  - [x] [List of probability](https://en.wikipedia.org/wiki/List_of_probability_distributions)
  - [x] [Conjugate priors](https://en.wikipedia.org/wiki/Conjugate_prior)
  - [x] calculus of variations
- - [blog: the clculus of variations"](http://bjlkeng.github.io/posts/the-calculus-of-variations/)
+ - [blog: the clculus of variation](http://bjlkeng.github.io/posts/the-calculus-of-variations/)
  - [x] ROC, PR 
   - [wiki: ROC, PR](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)
  - [x] [precision & recall](https://en.wikipedia.org/wiki/Precision_and_recall)

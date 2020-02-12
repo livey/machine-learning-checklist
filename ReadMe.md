@@ -50,7 +50,7 @@
   - [the kernel cookbook](https://www.cs.toronto.edu/~duvenaud/cookbook/)
  - [x] generative models
   - [definitely should be the PRML](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
-
+ - [ ] Gaussian process
 
 
  **Concepts**
@@ -72,7 +72,6 @@
   - [The Variational Approximation for Bayesian Inference ](http://www.cs.uoi.gr/~arly/papers/SPM08.pdf)
   - [pattern recognition and machine learning, chapter 9, 10](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
    - [lecture note](http://cs229.stanford.edu/notes/cs229-notes8.pdf)
- - [ ] Gaussian process
 
 **reinforcement learning** 
 - [x] [Sutton: reinforcement learning, an introduction](http://incompleteideas.net/book/the-book-2nd.html)

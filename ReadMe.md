@@ -81,6 +81,7 @@
  - [github: pdf](https://github.com/janishar/mit-deep-learning-book-pdf)
  - [x] tutorial 
   - [http://ufldl.stanford.edu/tutorial/](http://ufldl.stanford.edu/tutorial/)
+ - [ ] [stanford cs230](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)
   
 **optimization**
 - [x] convex optimization 

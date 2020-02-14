@@ -29,6 +29,7 @@
  - [common kernel functions](https://data-flair.training/blogs/svm-kernel-functions/)
  - [x] linear regression 
   - [more detailed cases](http://statweb.stanford.edu/~owen/courses/305-1415/ch2.pdf)
+  - [over and under determined system](http://people.csail.mit.edu/bkph/articles/Pseudo_Inverse.pdf)
  - [x] logistic regression
  - [x] lasso 
  - [x] principal component analysis (PCA)

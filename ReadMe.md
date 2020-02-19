@@ -51,8 +51,6 @@
   - [the kernel cookbook](https://www.cs.toronto.edu/~duvenaud/cookbook/)
  - [x] generative models
   - [definitely should be the PRML](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
- - [ ] Gaussian process
-  -[cornell cs4780](http://www.cs.cornell.edu/courses/cs4780/2018fa/index.html)
 
 
  **Concepts**

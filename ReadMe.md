@@ -13,7 +13,7 @@
  - [wiki: Gradient_boosting](https://en.wikipedia.org/wiki/Gradient_boosting)
  - [Boosting algorithms as gradient descent](http://papers.nips.cc/paper/1766-boosting-algorithms-as-gradient-descent.pdf)
  - [Intro. gradient_boosting](http://www.chengli.io/tutorials/gradient_boosting.pdf)
- - [ ] XGBoost
+ - [x] XGBoost
  - [a scalable tree boosting system](https://www.kdd.org/kdd2016/papers/files/rfp0697-chenAemb.pdf)
  - [x] [Naive Bayesian clssification](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
   - Gaussian naive Bayes or Gaussian discriminate analysis

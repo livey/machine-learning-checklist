@@ -94,3 +94,5 @@
  - [github](https://github.com/epfml/OptML_course)
  - [x] overview of gradient descent optimization algorithms
   - [blog: optimizing-gradient-descent](http://ruder.io/optimizing-gradient-descent/)
+**Detection and Estimation
+- [ ] [detection and estimation theory](https://www.ece.iastate.edu/~namrata/EE527/)

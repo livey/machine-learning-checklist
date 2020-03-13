@@ -96,7 +96,7 @@
   - [blog: optimizing-gradient-descent](http://ruder.io/optimizing-gradient-descent/)
   
 **Detection, Estimation and Hypothesis Testing**
-- [ ] [detection and estimation theory](https://www.ece.iastate.edu/~namrata/EE527/)
+- [x] [detection and estimation theory](https://www.ece.iastate.edu/~namrata/EE527/)
 - [ ] Hypothesis testing
  - [caltech](http://www.its.caltech.edu/~mshum/stats/lect8.pdf)
  - [tutor](http://personal.lse.ac.uk/PIFFER/HT%20for%20beginners.pdf) 

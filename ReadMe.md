@@ -52,7 +52,9 @@
   - [the kernel cookbook](https://www.cs.toronto.edu/~duvenaud/cookbook/)
  - [x] generative models
   - [definitely should be the PRML](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
-
+ - [x] anomaly detection 
+  - [one class svm](https://papers.nips.cc/paper/1723-support-vector-method-for-novelty-detection.pdf)
+  - [isolation forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest)
 
  **Concepts**
  - [x] bias-variance trade-off 

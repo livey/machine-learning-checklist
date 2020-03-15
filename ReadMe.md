@@ -99,6 +99,6 @@
   
 **Detection, Estimation and Hypothesis Testing**
 - [x] [detection and estimation theory](https://www.ece.iastate.edu/~namrata/EE527/)
-- [ ] Hypothesis testing
+- [x] Hypothesis testing
  - [caltech](http://www.its.caltech.edu/~mshum/stats/lect8.pdf)
  - [tutor](http://personal.lse.ac.uk/PIFFER/HT%20for%20beginners.pdf) 

@@ -56,6 +56,7 @@
   - [one class svm](https://papers.nips.cc/paper/1723-support-vector-method-for-novelty-detection.pdf)
   - [isolation forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest)
  - [x] Linear Discriminate Analysis(LDA)
+ 
  **Concepts**
  - [x] bias-variance trade-off 
   - [ML notes, pp 8--11](http://www-m5.ma.tum.de/foswiki/pub/M5/Allgemeines/MA4801_2018S/ML_notes_main.pdf)

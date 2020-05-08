@@ -86,6 +86,7 @@
  - [x] tutorial 
   - [http://ufldl.stanford.edu/tutorial/](http://ufldl.stanford.edu/tutorial/)
  - [ ] [stanford cs230](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)
+ - [ ] [Bayesian Deep Networks](https://www.cs.tufts.edu/comp/150BDL/2019f/)
   
 **optimization**
 - [x] convex optimization 

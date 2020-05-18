@@ -1,7 +1,8 @@
 ### These resources I found useful are based on my EECS background. 
 **algorithms**
- - [x] decision tree 
-  - [tree](https://machinelearningmastery.com/implement-decision-tree-algorithm-scratch-python/)
+ - [x] tree 
+  - [The Elements of Statistic Learning Chap9.2]
+  - [one implementation](https://machinelearningmastery.com/implement-decision-tree-algorithm-scratch-python/)
  - [x] gradient boost decision tree
   - [Greedy function approximation: A gradient boosting machine](https://statweb.stanford.edu/~jhf/ftp/trebst.pdf)
   - [Intro. BoostedTree.pdf](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)

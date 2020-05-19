@@ -99,6 +99,7 @@
  - [github](https://github.com/epfml/OptML_course)
  - [x] overview of gradient descent optimization algorithms
   - [blog: optimizing-gradient-descent](http://ruder.io/optimizing-gradient-descent/)
+  - [overview of recent gd methods](https://johnchenresearch.github.io/demon/)
   
 **Detection, Estimation and Hypothesis Testing**
 - [x] [detection and estimation theory](https://www.ece.iastate.edu/~namrata/EE527/)

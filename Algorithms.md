@@ -28,6 +28,7 @@
  - [common kernel functions](https://data-flair.training/blogs/svm-kernel-functions/)
  - [x] linear regression 
   - [http://statweb.stanford.edu/~owen/courses/305-1415/ch2.pdf](http://statweb.stanford.edu/~owen/courses/305-1415/ch2.pdf)
+  - [kernelized linear regression](https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote13.html)
  - [x] logistic regression
  - [x] least square
  - [x] lasso 

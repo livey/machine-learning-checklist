@@ -34,6 +34,7 @@
  - [x] linear regression 
   - [more detailed cases](http://statweb.stanford.edu/~owen/courses/305-1415/ch2.pdf)
   - [over and under determined system](http://people.csail.mit.edu/bkph/articles/Pseudo_Inverse.pdf)
+  - [kernelized linear regression](https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote13.html)
  - [x] logistic regression
  - [x] lasso 
  - [x] principal component analysis (PCA)

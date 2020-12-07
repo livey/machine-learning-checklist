@@ -26,6 +26,7 @@
  - [wiki: loss function for classification](https://en.wikipedia.org/wiki/Loss_functions_for_classification)
  - [kernel trick](https://stats.stackexchange.com/questions/48506/what-function-could-be-a-kernel)
  - [common kernel functions](https://data-flair.training/blogs/svm-kernel-functions/)
+ - [support vector regression](https://www.mathworks.com/help/stats/understanding-support-vector-machine-regression.html)
  - [x] linear regression 
   - [http://statweb.stanford.edu/~owen/courses/305-1415/ch2.pdf](http://statweb.stanford.edu/~owen/courses/305-1415/ch2.pdf)
   - [kernelized linear regression](https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote13.html)

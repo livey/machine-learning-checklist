@@ -61,6 +61,8 @@
   - [one class svm](https://papers.nips.cc/paper/1723-support-vector-method-for-novelty-detection.pdf)
   - [isolation forest](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest)
  - [x] Linear Discriminate Analysis(LDA)
+ - [ ] semi-supervised learning
+  - [Laplacian SVM](https://www.jmlr.org/papers/volume7/belkin06a/belkin06a.pdf)
  
  **Concepts**
  - [x] bias-variance trade-off 

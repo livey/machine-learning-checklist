@@ -64,6 +64,7 @@
  - [ ] semi-supervised learning
   - [Laplacian SVM](https://www.jmlr.org/papers/volume7/belkin06a/belkin06a.pdf)
  - [ ] [Bayesian Optimization](https://arxiv.org/pdf/1807.02811.pdf)
+
  **Concepts**
  - [x] bias-variance trade-off 
   - [ML notes, pp 8--11](http://www-m5.ma.tum.de/foswiki/pub/M5/Allgemeines/MA4801_2018S/ML_notes_main.pdf)

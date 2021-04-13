@@ -1,0 +1,1 @@
+- [ ] why use moving average in batch normalization

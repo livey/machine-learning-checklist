@@ -72,12 +72,13 @@
            * positive =>0.7 IoU or anchor with highest IoU (in case no one match the first condition)
            * negative =< 0.3 (except the positive one)  
            * 4k coordinates(k anchor, each has 4 coordinates) + 2k scores
-       * loss function = classification loss (k+1 classes) + regression loss  
+       * loss function = classification loss (k+1 classes) + regression loss (only positive ones have regression loss) 
        * training
          * alternating between region proposal network and object detection network
        
    * one stage detection
      - [ ] YOLO
+       * divide the image into $S \times S$ cells
      - [ ] SSD
    * segmentation
       

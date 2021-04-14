@@ -58,7 +58,8 @@
        * training
          * flip (image augmentation) 
          * each batch from two images 
-         * 
+         * =>0.5 IoU as positive and used in training
+         * sample the rest from (0.1, 0.5] IoU as background image class (partially overlapped patches are harder to classify [hard mining] )
      - [ ] Faster R-CNN
    * one stage detection
      - [ ] YOLO

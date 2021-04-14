@@ -27,7 +27,7 @@
    - [ ] how it facilitate deeper networks
  
  * Computer Vision
-   ** two stage detection
+   * two stage detection
      - [ ] R-CNN
      - [ ] Fast R-CNN
      - [ ] Faster R-CNN

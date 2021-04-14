@@ -79,6 +79,13 @@
    * one stage detection
      - [ ] YOLO
        * divide the image into $S \times S$ cells
+       * each cell produce $S \times S\times(5B+C))$ tensor
+         * 4B location, (x,y,w,h), (x,y)--relative to bounds of the cell, (w, h)--relative to the whole image 
+         * B confidence Pr(obj)x IoU 
+         * C classes  
+       * l_2 norm for the location and classification 
+       * each cell only responsible for one class, so small dense objects will miss
      - [ ] SSD
+       * 
    * segmentation
       

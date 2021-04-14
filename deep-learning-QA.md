@@ -1,4 +1,10 @@
-* dropout 
+* Activation function
+  * principles 
+    * monotonic -- stable training 
+    * simple & non-parametric 
+    * non-linear
+    * range (finite range --> stable training, infinite range --> small learning rate) 
+* Dropout 
   - [ ] improve generalization 
   - [ ] how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
   - [ ] [as Bayesian approximation](https://zhuanlan.zhihu.com/p/82108924)

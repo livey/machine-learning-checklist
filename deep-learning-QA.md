@@ -29,8 +29,14 @@
  * Computer Vision
    * two stage detection
      - [ ] R-CNN
+       * Bottleneck 
+         * region proposal is slow 
+         * repeated cnn features 
+         * svm require storage and computation is slow
      - [ ] Fast R-CNN
      - [ ] Faster R-CNN
+   * one stage detection
      - [ ] YOLO
-   - [ ] SSD 
+     - [ ] SSD
+   * segmentation
       

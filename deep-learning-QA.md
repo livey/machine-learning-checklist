@@ -11,4 +11,10 @@
   - [ ] why not use moving average in batch normalization
     - batch differ, will result in large variance when updating the weight
     - in traditional BN, we backpropagate and count the input feature
-  
+ * Convolutional kernels 
+   - [ ] [types of kernels](https://towardsdatascience.com/types-of-convolution-kernels-simplified-f040cb307c37)
+      - 1, 2, 3 D kernels 
+      - Transposed convolution
+      - Seperable convolution 
+      - Dilate convolution
+      - Deformable convolution

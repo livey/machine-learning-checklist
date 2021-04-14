@@ -60,7 +60,22 @@
          * each batch from two images 
          * =>0.5 IoU as positive and used in training
          * sample the rest from (0.1, 0.5] IoU as background image class (partially overlapped patches are harder to classify [hard mining] )
+         * non-max suppression is used at inference stage
+         * low-rank approximation is used to speed up inference
      - [ ] Faster R-CNN
+       * shared CNN feature for region proposal and detection network
+       * region proposal network (RPN)
+         * sliding window on CNN feature map
+         * anchor
+           * each is centered at the sliding window with different scale and aspect rations (bonus: multi scale) 
+           * each anchor corresponding to positive -- negative 
+           * positive =>0.7 IoU or anchor with highest IoU (in case no one match the first condition)
+           * negative =< 0.3 (except the positive one)  
+           * 4k coordinates(k anchor, each has 4 coordinates) + 2k scores
+       * loss function = classification loss (k+1 classes) + regression loss  
+       * training
+         * alternating between region proposal network and object detection network
+       
    * one stage detection
      - [ ] YOLO
      - [ ] SSD

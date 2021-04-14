@@ -83,9 +83,20 @@
          * 4B location, (x,y,w,h), (x,y)--relative to bounds of the cell, (w, h)--relative to the whole image 
          * B confidence Pr(obj)x IoU 
          * C classes  
+       * one box with highest IoU are responsible to prediciton
        * l_2 norm for the location and classification 
+       * improve generalization: Dropout (p=0.5), image augmentation (random scaling, xposure and sturation) 
        * each cell only responsible for one class, so small dense objects will miss
+       * condidence score used for non-max suppression in inference time
      - [ ] SSD
-       * 
+       * image pyramid 
+       * sliding window is fixed (3x3xp), 
+       * predicted location is relative to the default box shape
+       * (c+1) classes score
+       * matching strategy: => 0.5 jaccard overlap (treated as positive samples) 
+       * location loss = Huber loss and only account for the positive samples 
+       * sort the score and choose larger one as the negative samples (negative : postive = 3:1) 
    * segmentation
-      
+      - [ ] Mask R-CNN
+        * add segmentation network in additino to faster R-CNN 
+        * use RoIAlign to fine tune the region (linear interpolation) 

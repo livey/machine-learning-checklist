@@ -1,7 +1,7 @@
 * dropout 
- - [ ] improve generalization 
- - [ ] how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
- - [ ] as Bayesian approximation
+  - [ ] improve generalization 
+  - [ ] how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
+  - [ ] as Bayesian approximation
 * Batch Normalization
  - [ ] more stable training
  - [ ] generalization

@@ -6,8 +6,8 @@
   - [ ] more stable training
   - [ ] generalization
   - [ ] how it works
-    - covariat shift
-    - more smooth loss function 
+   - covariat shift
+   - more smooth loss function 
   - [ ] why not use moving average in batch normalization
     - batch differ, will result in large variance when updating the weight
     - in traditional BN, we backpropagate and count the input feature

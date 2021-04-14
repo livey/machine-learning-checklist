@@ -18,3 +18,19 @@
       - Seperable convolution 
       - Dilate convolution
       - Deformable convolution
+    - [ ] small kernels v.s. large kernels
+      - small -> less parameters
+      - stacked small -> similar perception field as large kernels, less parameters while similar performance
+ * Residual network 
+   - [ ] x->(relu)->(relu) + x
+   - [ ] why at least two layers 
+   - [ ] how it facilitate deeper networks
+ 
+ * Computer Vision
+   ** two stage detection
+     - [ ] R-CNN
+     - [ ] Fast R-CNN
+     - [ ] Faster R-CNN
+     - [ ] YOLO
+   - [ ] SSD 
+      

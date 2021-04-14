@@ -40,7 +40,7 @@
          * (x,y,w,h) normalization and nonlinear transformation 
          * Huber loss 
        * training 
-         * >=0.5 IoU as positive, other as negative 
+         * =>0.5 IoU as positive, other as negative 
          * each batch contains 32 positive and 92 background 
        * Bottleneck 
          * region proposal is slow 

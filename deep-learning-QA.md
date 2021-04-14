@@ -25,7 +25,18 @@
    - [ ] x->(relu)->(relu) + x
    - [ ] why at least two layers 
    - [ ] how it facilitate deeper networks
- 
+ * Optimizer 
+   - [ ] SGD 
+   - [ ] AdaGrad
+     * should take larger steps on less updated parameters (intuition: imagine sparse input features) 
+   - [ ] RMSprop 
+     * \beta_2 = 0.99 
+     * add decay factor to the sum of the gradients 
+   - [ ] Adam 
+     * add momentum for the gradient 
+     * \beta_1 = 0.9, \beta_2 = 0.999 
+   - [ ] AMSGrad 
+     * gradient accumulation are clipped 
  * Computer Vision
    * two stage detection
      - [ ] R-CNN

@@ -45,6 +45,10 @@
      * \beta_1 = 0.9, \beta_2 = 0.999 
    - [ ] AMSGrad 
      * gradient accumulation are clipped 
+   * how to choose good optimizer
+     * first try Adam 
+     * SGD should attempt with good learning rate 
+   * first try 0.01 as the default learning rate --> try some grid search, candidates are {1, 0.1, 0.01, 10^(-4), 10^(-5)}
  * Computer Vision
    * two stage detection
      - [ ] R-CNN

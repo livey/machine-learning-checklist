@@ -35,13 +35,17 @@
     * range (finite range --> stable training, infinite range --> small learning rate) 
     * continuously differentiable 
   * linear, sigmoid (nice interpretation while vanishing gradient), relu (large gradient), leaky-relu (has gradient when it is less than 0), selu (self normalized), tanh (value [-1,1], gradien is better than sigmoid), soft-plus ( log(e^x+1) ), soft-max (probability interpretation and used in cross entropy loss) 
+  * cos (solving differential equations) 
 * LSTM 
   * [structure](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
   * why use tanh? state value should increase or decrease. if sigmoid, only decrease. tanh \in [-1,1], represents increase and decrease. 
 * Dropout 
+  * each input (neuron) is selected with probability p (20% ~ 50% ) (not the each weight element is randomly selected)
   * improve generalization 
   * how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
   * [as Bayesian approximation](https://zhuanlan.zhihu.com/p/82108924)
+  * how it works 
+    * much stable training (at each training, pruning out parts weights. small weights are easier to train)
 * Batch Normalization
   * more stable training
   * generalization
@@ -67,6 +71,11 @@
    * x->(relu)->(relu) + x
    * why at least two layers 
    * how it facilitate deeper networks
+* [How to choose the number of hidden layers and nodes in a feedforward neural network?](https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw)
+  * 
+
+
+
  * choose a good initialization
    * too small ones lead to vanishing gradient 
    * large ones lead to exploding 

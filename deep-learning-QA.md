@@ -4,6 +4,8 @@
     * simple & non-parametric 
     * non-linear
     * range (finite range --> stable training, infinite range --> small learning rate) 
+    * continuously differentiable 
+  * linear, sigmoid, relu, leaky-relu, selu, tanh, soft-plus ( log(e^x+1) ), soft-max, 
 * Dropout 
   - [ ] improve generalization 
   - [ ] how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 

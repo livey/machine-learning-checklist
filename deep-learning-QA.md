@@ -23,7 +23,7 @@
     * use different weights on the loss of different class
     * use precision/recal, f1 score 
   * few labeled data
-    - [ ] semi-supervised learning(https://yassouali.github.io/ml-blog/deep-semi-supervised/)  
+    - [ ] [semi-supervised learning](https://yassouali.github.io/ml-blog/deep-semi-supervised/)  
    
 
 * Activation function

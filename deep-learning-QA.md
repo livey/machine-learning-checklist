@@ -10,6 +10,21 @@
     * adversarial learning
     * dropout     
     * batch normalization 
+* Data 
+  * small size of data 
+    * reduce machine capacity(reduce complex and add regularizer)  
+    * data augmentation 
+    * transfer learning 
+    * few shot learning 
+  * imbalanced data 
+    * oversampling
+    * undersampling
+    * data augmentation
+    * use different weights on the loss of different class
+    * use precision/recal, f1 score 
+  * few labeled data
+    - [ ] semi-supervised learning(https://yassouali.github.io/ml-blog/deep-semi-supervised/)  
+   
 
 * Activation function
   * principles 
@@ -23,34 +38,34 @@
   * [structure](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
   * why use tanh? state value should increase or decrease. if sigmoid, only decrease. tanh \in [-1,1], represents increase and decrease. 
 * Dropout 
-  - [ ] improve generalization 
-  - [ ] how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
-  - [ ] [as Bayesian approximation](https://zhuanlan.zhihu.com/p/82108924)
+  * improve generalization 
+  * how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
+  * [as Bayesian approximation](https://zhuanlan.zhihu.com/p/82108924)
 * Batch Normalization
-  - [ ] more stable training
-  - [ ] generalization
-  - [ ] how it works
+  * more stable training
+  * generalization
+  * how it works
     - covariat shift
     - more smooth loss function 
-  - [ ] why not use moving average in batch normalization
+  * why not use moving average in batch normalization
     - batch differ, will result in large variance when updating the weight
     - in traditional BN, we backpropagate and count the input feature
  * word2vector
 
  * Convolutional kernels 
-   - [ ] [types of kernels](https://towardsdatascience.com/types-of-convolution-kernels-simplified-f040cb307c37)
+   * [types of kernels](https://towardsdatascience.com/types-of-convolution-kernels-simplified-f040cb307c37)
       - 1, 2, 3 D kernels 
       - Transposed convolution
       - Seperable convolution 
       - Dilate convolution
       - Deformable convolution
-    - [ ] small kernels v.s. large kernels
+    * small kernels v.s. large kernels
       - small -> less parameters
       - stacked small -> similar perception field as large kernels, less parameters while similar performance
  * Residual network 
-   - [ ] x->(relu)->(relu) + x
-   - [ ] why at least two layers 
-   - [ ] how it facilitate deeper networks
+   * x->(relu)->(relu) + x
+   * why at least two layers 
+   * how it facilitate deeper networks
  * choose a good initialization
    * too small ones lead to vanishing gradient 
    * large ones lead to exploding 

@@ -10,7 +10,7 @@
     * adversarial learning
     * dropout     
     * batch normalization 
-     
+
 * Activation function
   * principles 
     * monotonic -- stable training 
@@ -36,7 +36,7 @@
     - batch differ, will result in large variance when updating the weight
     - in traditional BN, we backpropagate and count the input feature
  * word2vector
- 
+
  * Convolutional kernels 
    - [ ] [types of kernels](https://towardsdatascience.com/types-of-convolution-kernels-simplified-f040cb307c37)
       - 1, 2, 3 D kernels 
@@ -58,7 +58,17 @@
    * variance of activations should stay the same
    * types of initialization 
      * Xavier ( W ~ N(0, 1/dimension of input), b=0) 
-     * Uniform  
+     * Uniform 
+     
+* loss function  
+  * 0-1 loss
+  * l1, l2, l_\infty
+  * KL divergence
+  * cross entropy
+  * hinge 
+  * Huber loss
+  * maximal log likelihood
+  * exponential   
  * Training 
    * mini-batch(large batch-- stable gradient--high computation and storage, small unstable training loss) 
  * Optimizer 

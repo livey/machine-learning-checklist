@@ -41,11 +41,15 @@
   * why use tanh? state value should increase or decrease. if sigmoid, only decrease. tanh \in [-1,1], represents increase and decrease. 
 * Dropout 
   * each input (neuron) is selected with probability p (20% ~ 50% ) (not the each weight element is randomly selected)
-  * improve generalization 
+  * improve generalization (ultimate goal)[good answer](https://stats.stackexchange.com/questions/241645/how-to-explain-dropout-regularization-in-simple-terms)
+    * prevent co-updating
+    * ensemble learning
+    * Bayesian approximation 
   * how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
   * [as Bayesian approximation](https://zhuanlan.zhihu.com/p/82108924)
   * how it works 
     * much stable training (at each training, pruning out parts weights. small weights are easier to train)
+    * prevent co-updating of parameters
 * Batch Normalization
   * more stable training
   * generalization

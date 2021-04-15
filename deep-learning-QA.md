@@ -1,3 +1,16 @@
+* Generalization 
+  * how to improve (reduce overfitting) 
+    * reduce capacity (reduce depth, width; use bottleneck network. not recommended)
+    * early stopping ( use validation data to monitor the error, if goes up, early stopping) 
+    * regularization and weight decay 
+    * ensemble learning (bagging--reduce variance, boosting--reduce biase)
+    * more dataset
+    * dataset augmentation 
+    * label smoothing
+    * adversarial learning
+    * dropout     
+    * batch normalization 
+     
 * Activation function
   * principles 
     * monotonic -- stable training 
@@ -8,6 +21,7 @@
   * linear, sigmoid (nice interpretation while vanishing gradient), relu (large gradient), leaky-relu (has gradient when it is less than 0), selu (self normalized), tanh (value [-1,1], gradien is better than sigmoid), soft-plus ( log(e^x+1) ), soft-max (probability interpretation and used in cross entropy loss) 
 * LSTM 
   * [structure](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
+  * why use tanh? state value should increase or decrease. if sigmoid, only decrease. tanh \in [-1,1], represents increase and decrease. 
 * Dropout 
   - [ ] improve generalization 
   - [ ] how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
@@ -35,6 +49,14 @@
    - [ ] x->(relu)->(relu) + x
    - [ ] why at least two layers 
    - [ ] how it facilitate deeper networks
+ * choose a good initialization
+   * too small ones lead to vanishing gradient 
+   * large ones lead to exploding 
+   * mean of activation should be zero
+   * variance of activations should stay the same
+   * types of initialization 
+     * Xavier ( W ~ N(0, 1/dimension of input), b=0) 
+     * Uniform  
  * Optimizer 
    - [ ] SGD 
    - [ ] AdaGrad

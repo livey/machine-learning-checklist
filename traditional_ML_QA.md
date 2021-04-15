@@ -9,4 +9,8 @@
     * data or feature subsampling
     * w and T regularizer 
     * imbalance parameter 
+* Decision tree
+  * how to split a node
+  * how to sessor branches 
+ 
  

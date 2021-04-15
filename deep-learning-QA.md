@@ -78,8 +78,11 @@
      * SGD should attempt with good learning rate 
    * first try 0.01 as the default learning rate --> try some grid search, candidates are {1, 0.1, 0.01, 10^(-4), 10^(-5)}
  * Computer Vision
+   * image classification 
+     - [ ] [ten papers related to image classification](https://towardsdatascience.com/10-papers-you-should-read-to-understand-image-classification-in-the-deep-learning-era-4b9d792f45a7)
+     - [ ] [inception](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202) 
    * two stage detection
-     - [ ] R-CNN
+     * R-CNN
        * IoU (intersection over union), RoI(region of interested), NMS(non-max supression), mAP(mean average precision) 
        * use NMS for each class at test time 
        * resion proposal done by selective search 
@@ -97,7 +100,7 @@
          * region proposal is slow 
          * repeated cnn features 
          * svm require storage and computation is slow
-     - [ ] Fast R-CNN
+     *  Fast R-CNN
        * RoI is independent of the network
        * shared CNN feature map 
        * RoI pooling to get fixed-size input of the DNN(classification & regression) 
@@ -113,7 +116,7 @@
          * sample the rest from (0.1, 0.5] IoU as background image class (partially overlapped patches are harder to classify [hard mining] )
          * non-max suppression is used at inference stage
          * low-rank approximation is used to speed up inference
-     - [ ] Faster R-CNN
+     * Faster R-CNN
        * shared CNN feature for region proposal and detection network
        * region proposal network (RPN)
          * sliding window on CNN feature map
@@ -126,7 +129,7 @@
        * loss function = classification loss (k+1 classes) + regression loss (only positive ones have regression loss) 
        * training
          * alternating between region proposal network and object detection network
-       
+   
    * one stage detection
      - [ ] YOLO
        * divide the image into $S \times S$ cells

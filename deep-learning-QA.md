@@ -22,6 +22,7 @@
     * data augmentation
     * use different weights on the loss of different class
     * use precision/recal, f1 score 
+    * anomaly detection
   * few labeled data
     - [ ] [semi-supervised learning](https://yassouali.github.io/ml-blog/deep-semi-supervised/)  
    

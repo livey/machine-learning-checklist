@@ -38,6 +38,10 @@
     * continuously differentiable 
   * linear, sigmoid (nice interpretation while vanishing gradient), relu (large gradient), leaky-relu (has gradient when it is less than 0), selu (self normalized), tanh (value [-1,1], gradien is better than sigmoid), soft-plus ( log(e^x+1) ), soft-max (probability interpretation and used in cross entropy loss) 
   * cos (solving differential equations) 
+  * soft-max 
+    * v.s. hard max 
+      * soft-max can easily achieve one-hot shape (due to the exponential transform) even that feature are not so different
+      * as a result of previous item, training is much more efficient  
 * LSTM 
   * [structure](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
   * why use tanh? state value should increase or decrease. if sigmoid, only decrease. tanh \in [-1,1], represents increase and decrease. 

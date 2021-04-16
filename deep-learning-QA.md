@@ -212,3 +212,5 @@
       - [ ] Mask R-CNN
         * add segmentation network in additino to faster R-CNN 
         * use RoIAlign to fine tune the region (linear interpolation) 
+   - [ ] online hard example mining
+   - [ ] Fine-grained image categorization 

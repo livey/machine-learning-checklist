@@ -2,6 +2,11 @@
   * self defined loss function  
   * second order approximation
   * regularizer 
+  * boosting speed
+    * sorting feature values
+    * subsampling features and data samples
+    * parallel computing
+  * deal with sparse data
   * Tunable parameters 
     * maximal tree depth 
     * learning rate  
@@ -10,7 +15,9 @@
     * w and T regularizer 
     * imbalance parameter 
 * Decision tree
-  * how to split a node
-  * how to sessor branches 
+  - [ ] how to split a node
+  - [ ] how to sessor branches 
+
+- [ ] k-means and k-means ++
  
  

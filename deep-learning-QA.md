@@ -1,15 +1,17 @@
 * Generalization 
   * how to improve (reduce overfitting) 
-    * reduce capacity (reduce depth, width; use bottleneck network. not recommended)
-    * early stopping ( use validation data to monitor the error, if goes up, early stopping) 
-    * regularization and weight decay 
-    * ensemble learning (bagging--reduce variance, boosting--reduce biase)
     * more dataset
     * dataset augmentation 
     * label smoothing
-    * adversarial learning
+    * reduce capacity (reduce depth, width; use bottleneck network. not recommended)
+    * regularization and weight decay 
     * dropout     
+    * early stopping ( use validation data to monitor the error, if goes up, early stopping) 
+    * adversarial learning
+    * ensemble learning (bagging--reduce variance, boosting--reduce biase)
     * batch normalization 
+* overfitting (similar to improve generalization)
+  
 * Data 
   * small size of data 
     * reduce machine capacity(reduce complex and add regularizer)  
@@ -76,7 +78,13 @@
    * why at least two layers 
    * how it facilitate deeper networks
 * [How to choose the number of hidden layers and nodes in a feedforward neural network?](https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw)
-  * 
+  * determin input and output dimension (dimension of features and kind of loss)
+  * number of hidden neurons should in between the dimension of input and output.
+  * experiments
+  * intuition
+  * go for depth
+  * borrow ideas 
+  * search (pruning, random, grid, huristic, exhaustive)
 
 
 
@@ -116,7 +124,18 @@
      * first try Adam 
      * SGD should attempt with good learning rate 
    * first try 0.01 as the default learning rate --> try some grid search, candidates are {1, 0.1, 0.01, 10^(-4), 10^(-5)}
+ * gradient vanishing and explosion
+   * gradient clipping and weight decay 
+   * batch normalization 
+   * resnet, lstm
+   * fine tuning
+   * weight initialization 
+   * choose right activation function
+  
  * Computer Vision
+   * CNN 
+     * size of feature map (w' = floor((W+2p-k)/s + 1)
+     * receptive field 
    * image classification 
      - [ ] [ten papers related to image classification](https://towardsdatascience.com/10-papers-you-should-read-to-understand-image-classification-in-the-deep-learning-era-4b9d792f45a7)
      - [ ] [inception](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202) 

@@ -91,6 +91,7 @@
 
 **deep learning**
 - [x] Goodfellow I, Bengio Y, Courville A. "Deep learning". 
+ - [Home page](https://www.deeplearningbook.org/) 
  - [github: pdf](https://github.com/janishar/mit-deep-learning-book-pdf)
  - [x] tutorial 
   - [http://ufldl.stanford.edu/tutorial/](http://ufldl.stanford.edu/tutorial/)

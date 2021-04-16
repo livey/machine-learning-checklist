@@ -45,6 +45,7 @@
       * as a result of previous item, training is much more efficient  
     * not good for super huge amount of classes 
       * [improve](https://zhuanlan.zhihu.com/p/35027284) [2](https://blog.csdn.net/u013841196/article/details/89874937)
+      * inner class variation is larger than inter class variation, so learning will not be efficient 
       * target class will be one-hot coding, too large dimension
       * remedy 
         * hierachical

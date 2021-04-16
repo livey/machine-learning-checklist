@@ -9,7 +9,7 @@
     * early stopping ( use validation data to monitor the error, if goes up, early stopping) 
     * adversarial learning
     * ensemble learning (bagging--reduce variance, boosting--reduce biase)
-    * batch normalization 
+    * batch normalization (mini-batch introduce some noise, which increases generalization)
 * overfitting (similar to improve generalization)
   
 * Data 
@@ -53,6 +53,8 @@
     * much stable training (at each training, pruning out parts weights. small weights are easier to train)
     * prevent co-updating of parameters
 * Batch Normalization
+  * applied just before activation function 
+  * in CNN, each element in the feature map use the same scale and biase parameter (that is why we can do acceleration of BN at inference time, also is why we can do network slimming, batch-size x width x hight elments used to compute the mean and variance) 
   * more stable training
   * generalization
   * how it works
@@ -61,18 +63,46 @@
   * why not use moving average in batch normalization
     - batch differ, will result in large variance when updating the weight
     - in traditional BN, we backpropagate and count the input feature
+  * batch as a convolutional layer (expedite inference) 
+  * image -> conv -> BN -> Relu ([ref](https://zhuanlan.zhihu.com/p/94138640))
+  * network slimming (L_1 norm regularizer on scale factor) 
+  * usually used as pre-activation
+ 
  * word2vector
-
- * Convolutional kernels 
-   * [types of kernels](https://towardsdatascience.com/types-of-convolution-kernels-simplified-f040cb307c37)
-      - 1, 2, 3 D kernels 
-      - Transposed convolution
-      - Seperable convolution 
-      - Dilate convolution
-      - Deformable convolution
-    * small kernels v.s. large kernels
-      - small -> less parameters
-      - stacked small -> similar perception field as large kernels, less parameters while similar performance
+ 
+ * CNN 
+   - [ ] premise to use CNN (data distribution is even, almost indentical?)
+   * why use CNN 
+     * parameter sharing (one filter should be universal useful on any part of the image) 
+     * sparsity of connection (receptive field is limitted) 
+   * size of feature map (w' = floor((W+2p-k)/s + 1)
+   * receptive field 
+ 
+   * convolutional kernels  
+     * size of feature map (w' = floor((W+2p-k)/s + 1)
+     * receptive field 
+     * [types of kernels](https://towardsdatascience.com/types-of-convolution-kernels-simplified-f040cb307c37)
+        - 1, 2, 3 D kernels 
+        - Transposed convolution
+        - Seperable convolution 
+        - Dilate convolution
+        - Deformable convolution
+      * small kernels v.s. large kernels
+        - small -> less parameters
+        - stacked small -> similar perception field as large kernels, less parameters while similar performance
+        - computational efficiency 
+      - [ ] kernel dimension is an odd number 
+    * padding 
+      * 'same' -- if with stride 1, will output same dimension as the dimension of input
+      * 'valid' -- discard feature no cover the kernel 
+    * pooling 
+      * why? 
+        * reduce feature dimension -> reduce parameters 
+        * summarize the feature in a region -> robust to position variation   
+        * max-pooling extract sharp features (edge, point) while average-pooling extract smooth feature
+      * types (average, max, global) 
+        - [ ] soft-pool
+      * parameters (size, stride, types) 
  * Residual network 
    * x->(relu)->(relu) + x
    * why at least two layers 
@@ -85,7 +115,6 @@
   * go for depth
   * borrow ideas 
   * search (pruning, random, grid, huristic, exhaustive)
-
 
 
  * choose a good initialization
@@ -133,9 +162,6 @@
    * choose right activation function
   
  * Computer Vision
-   * CNN 
-     * size of feature map (w' = floor((W+2p-k)/s + 1)
-     * receptive field 
    * image classification 
      - [ ] [ten papers related to image classification](https://towardsdatascience.com/10-papers-you-should-read-to-understand-image-classification-in-the-deep-learning-era-4b9d792f45a7)
      - [ ] [inception](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202) 
@@ -207,7 +233,7 @@
        * (c+1) classes score
        * matching strategy: => 0.5 jaccard overlap (treated as positive samples) 
        * location loss = Huber loss and only account for the positive samples 
-       * sort the score and choose larger one as the negative samples (negative : postive = 3:1) 
+       * sort the score and choose larger ones as the negative samples (negative : postive = 3:1) 
    * segmentation
       - [ ] Mask R-CNN
         * add segmentation network in additino to faster R-CNN 

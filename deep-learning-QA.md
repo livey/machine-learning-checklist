@@ -148,7 +148,7 @@
    * types of initialization 
      * Xavier ( W ~ N(0, 1/dimension of input), b=0) 
      * Uniform 
-     
+     * 
 * loss function  
   * 0-1 loss
   * l1, l2, l_\infty

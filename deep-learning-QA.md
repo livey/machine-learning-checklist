@@ -41,7 +41,21 @@
   * soft-max 
     * v.s. hard max 
       * soft-max can easily achieve one-hot shape (due to the exponential transform) even that feature are not so different
+      * smooth approximation to one-hot coding
       * as a result of previous item, training is much more efficient  
+    * not good for super huge amount of classes 
+      * [improve](https://zhuanlan.zhihu.com/p/35027284) [2](https://blog.csdn.net/u013841196/article/details/89874937)
+      * target class will be one-hot coding, too large dimension
+      * remedy 
+        * hierachical
+        - [ ] label embbeding
+        - [ ] metric learning 
+    * computational stability 
+      * if feature -> (soft)->probability -> cross-entropy, 1/p_i will not be stable
+      * soft-max should see as a whole 
+    * why not max (max operation is not differentiable, max results in only optimizing one neuron, soft-max simultaneously max target and supressed un-target)
+    * gradient more stable (log(exp ) seems a almost linear function, so the gradient is stable )
+
 * LSTM 
   * [structure](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
   * why use tanh? state value should increase or decrease. if sigmoid, only decrease. tanh \in [-1,1], represents increase and decrease. 

@@ -51,7 +51,11 @@
         * hierachical
         - [ ] label embbeding
         - [ ] metric learning 
+      * after soft-max + cross entropy v.s. mse 
+        * cross entropy is convex, mse is not convex 
+        * gradient vanishing together with sigmoid  
     * computational stability 
+      * output subtract the maximal one will increase the stability (exp large value will cause overflow) 
       * if feature -> (soft)->probability -> cross-entropy, 1/p_i will not be stable
       * soft-max should see as a whole 
     * why not max (max operation is not differentiable, max results in only optimizing one neuron, soft-max simultaneously max target and supressed un-target)

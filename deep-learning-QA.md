@@ -9,7 +9,7 @@
     * early stopping ( use validation data to monitor the error, if goes up, early stopping) 
     * adversarial learning
     * ensemble learning (bagging--reduce variance, boosting--reduce biase)
-    * batch normalization (mini-batch introduce some noise, which increases generalization)
+    * batch normalization (mini-batch introduce some noise, which increases generalization, make the loss landscape more smooth)
 * overfitting (similar to improve generalization)
   
 * Data 
@@ -64,12 +64,15 @@
 * LSTM 
   * [structure](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
   * why use tanh? state value should increase or decrease. if sigmoid, only decrease. tanh \in [-1,1], represents increase and decrease. 
+  - [ ] how it resolve the gradient vanishing problem? 
+    * [ref](https://medium.datadriveninvestor.com/how-do-lstm-networks-solve-the-problem-of-vanishing-gradients-a6784971a577) 
+    * compared with RNN (RNN has nested sigmoid, which makes gradient vanish. lstm only has multiplicity sigmoid and has cell state, which makes the gradient flows smoothly.)
 * Dropout 
   * each input (neuron) is selected with probability p (20% ~ 50% ) (not the each weight element is randomly selected)
   * improve generalization (ultimate goal [good answer](https://stats.stackexchange.com/questions/241645/how-to-explain-dropout-regularization-in-simple-terms))
     * prevent co-updating
     * ensemble learning
-    * Bayesian approximation 
+    - [ ] Bayesian approximation 
   * how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
   * [as Bayesian approximation](https://zhuanlan.zhihu.com/p/82108924)
   * how it works 
@@ -143,12 +146,13 @@
  * choose a good initialization
    * too small ones lead to vanishing gradient 
    * large ones lead to exploding 
+   * variance as a chain rule, variance also has vanishing and explosion phenomenon
    * mean of activation should be zero
    * variance of activations should stay the same
    * types of initialization 
-     * Xavier ( W ~ N(0, 1/dimension of input), b=0) 
-     * Uniform 
-     * 
+     * Kaiming (zero mean, variance 2/dimension of input) good for tanh, sigmoid activation function
+     * Xavier ( zero mean, variance 1/dimension of input) good for Relu activation function 
+     * combine both (zero mean, 2/(input + output dimension)
 * loss function  
   * 0-1 loss
   * l1, l2, l_\infty
@@ -183,14 +187,22 @@
    * fine tuning
    * weight initialization 
    * choose right activation function
-  
+   * learning rate 
+ * Generative Adversarial Network 
+   * 
  * Computer Vision
+   * how to handle different size of input image
+     * image warp 
+     * interpolation
+     * spatial pyramid pooling 
+     - [ ] fully convolutional network (transpose convolution)   
    * image classification 
      - [ ] [ten papers related to image classification](https://towardsdatascience.com/10-papers-you-should-read-to-understand-image-classification-in-the-deep-learning-era-4b9d792f45a7)
      - [ ] [inception](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202) 
    * two stage detection
      * R-CNN
        * IoU (intersection over union), RoI(region of interested), NMS(non-max supression), mAP(mean average precision) 
+       * IoU [code](https://zhuanlan.zhihu.com/p/74016061)
        * use NMS for each class at test time 
        * resion proposal done by selective search 
        * warp region 

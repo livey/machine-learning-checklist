@@ -1,5 +1,22 @@
-- [ ] GBDT
+* co-linear 
+  * over fitting
+    * large error on the regression coefficients
+    * sensitive to the feature noise
+  * dimension reduction (PCA, L1, filter) 
+* GBDT
+  * how
+    * given current forest
+    * compute residual 
+    * fit residual 
+    * optimize residual 
+    * update current tree 
+  
   * v.s. random forest
+    * random forest 
+      * bootstrap data 
+      * randomly select m features 
+      * build a tree 
+  * boosting v.s. bagging
 * XGboost 
   * self defined loss function  
   * second order approximation
@@ -32,14 +49,12 @@
     * discard samples with missing value
     * add a feature indicate there are missing values
     * construct surrogate function (make default branching)
-* random forest 
-  * bootstrap data 
-  * randomly select m features 
-  * build a tree 
+
 - [ ] k-means and k-means ++
   * con
     * number of clusters is hard to determin 
     * initial points matter (image choosed two very close points as the initial centers) 
 - [ ] coding AUC
- 
+* coding IoU (Intersection over Union)
+  * intersection width = max(0, min(x1,x2) - max(y1,y2)) 
  

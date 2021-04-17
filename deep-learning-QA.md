@@ -9,7 +9,7 @@
     * early stopping ( use validation data to monitor the error, if goes up, early stopping) 
     * adversarial learning
     * ensemble learning (bagging--reduce variance, boosting--reduce biase)
-    * batch normalization (mini-batch introduce some noise, which increases generalization, make the loss landscape more smooth)
+    * batch normalization (mini-batch introduce some noise, which increases generalization, make the loss landscape more smooth. For a batch, if it has large variance, then the gradient is not stable. So, we can only apply small step-size. With BN, we can use larger learning rate, thus faster convergence.)
 * overfitting (similar to improve generalization)
   
 * Data 
@@ -87,13 +87,14 @@
     - covariat shift
     - more smooth loss function 
   * why not use moving average in batch normalization
-    - batch differ, will result in large variance when updating the weight
-    - in traditional BN, we backpropagate and count the input feature
+    * batch differ, will result in large variance when updating the weight
+    * in traditional BN, we backpropagate and count the input feature
+    * if use average mean and variance, which is equivalent to apply linear transformation of the input. However, in addition to linear transformation, we are still learning the linear transform parameter. Since we changing it batch by batch, it makes the learning unstable.
   * batch as a convolutional layer (expedite inference) 
   * image -> conv -> BN -> Relu ([ref](https://zhuanlan.zhihu.com/p/94138640))
-  * network slimming (L_1 norm regularizer on scale factor) 
-  * usually used as pre-activation
- 
+  * network slimming (L_1 norm regularizer on scale factor and applied to feature channel) 
+  * usually used before activation function
+  * with stable gradient, we can use larger learning rate. 
  * word2vector
  
  * CNN 
@@ -118,6 +119,10 @@
         - stacked small -> similar perception field as large kernels, less parameters while similar performance
         - computational efficiency 
       - [ ] kernel dimension is an odd number 
+        * the output and central pixel is sysmetric to ambient serrounding 
+      * 1x1 kernel 
+        * reduce dimension 
+        * channel information sharing
     * padding 
       * 'same' -- if with stride 1, will output same dimension as the dimension of input
       * 'valid' -- discard feature no cover the kernel 
@@ -188,6 +193,7 @@
    * weight initialization 
    * choose right activation function
    * learning rate 
+   * add regularizer 
  * Generative Adversarial Network 
    * 
  * Computer Vision

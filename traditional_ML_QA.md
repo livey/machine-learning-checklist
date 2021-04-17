@@ -1,3 +1,5 @@
+- [ ] GBDT
+  * v.s. random forest
 * XGboost 
   * self defined loss function  
   * second order approximation
@@ -14,7 +16,7 @@
     * data or feature subsampling
     * w and T regularizer 
     * imbalance parameter 
-* Decision tree
+* Decision tree [ref](https://zhuanlan.zhihu.com/p/85731206)
   - [ ] how to split a node
   - [ ] how to cut branches 
 

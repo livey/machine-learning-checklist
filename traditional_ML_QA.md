@@ -18,7 +18,11 @@
     * imbalance parameter 
 * Decision tree [ref](https://zhuanlan.zhihu.com/p/85731206)
   - [ ] how to split a node
+    * regression tree 
+      * mse + \alpha*|T| (regularize for tree size) 
+
   - [ ] how to cut branches 
+    * regression tree 
 
 - [ ] k-means and k-means ++
   * con

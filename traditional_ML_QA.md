@@ -20,9 +20,18 @@
   - [ ] how to split a node
     * regression tree 
       * mse + \alpha*|T| (regularize for tree size) 
+    * decision tree 
+      * miss classification rate
+      * Gini index
+      * entropy 
 
   - [ ] how to cut branches 
     * regression tree 
+      * merge node according to the mse, construct a sequence of subtree untill there is only one node, then there is a subtree which is optimal 
+  * deal with missing value 
+    * discard samples with missing value
+    * add a feature indicate there are missing values
+    * construct surrogate function (make default branching)
 
 - [ ] k-means and k-means ++
   * con

@@ -16,7 +16,7 @@
     * imbalance parameter 
 * Decision tree
   - [ ] how to split a node
-  - [ ] how to sessor branches 
+  - [ ] how to cut branches 
 
 - [ ] k-means and k-means ++
   * con

@@ -22,7 +22,7 @@
       * mse + \alpha*|T| (regularize for tree size) 
     * decision tree 
       * miss classification rate
-      * Gini index
+      * Gini index (sum of variance of multinomial distribution )
       * entropy 
 
   - [ ] how to cut branches 
@@ -32,7 +32,10 @@
     * discard samples with missing value
     * add a feature indicate there are missing values
     * construct surrogate function (make default branching)
-
+* random forest 
+  * bootstrap data 
+  * randomly select m features 
+  * build a tree 
 - [ ] k-means and k-means ++
   * con
     * number of clusters is hard to determin 

@@ -1,3 +1,8 @@
+* suitable for deep learning
+  * data sample is too small 
+  * no correlation among features 
+* why do data (feature) normalization 
+  * more stable feature range more stable gradient faster convergencce 
 * Generalization 
   * how to improve (reduce overfitting) 
     * more dataset
@@ -11,7 +16,15 @@
     * ensemble learning (bagging--reduce variance, boosting--reduce biase)
     * batch normalization (mini-batch introduce some noise, which increases generalization, make the loss landscape more smooth. For a batch, if it has large variance, then the gradient is not stable. So, we can only apply small step-size. With BN, we can use larger learning rate, thus faster convergence.)
 * overfitting (similar to improve generalization)
-  
+* shallow v.s. deep networks
+  - [ ] number of neurons needed to fit N data samples? 
+  * shallow 
+    * need exponential neurons
+    * large number of neurons need more data 
+  * deep 
+    * more expressible 
+    * less neurons 
+    * hierachical structure
 * Data 
   * small size of data 
     * reduce machine capacity(reduce complex and add regularizer)  
@@ -28,6 +41,9 @@
   * few labeled data
     - [ ] [semi-supervised learning](https://yassouali.github.io/ml-blog/deep-semi-supervised/)  
    
+  * multi labeled data 
+    * not good using soft-max + cross entropy 
+    * one v.s. all classifier 
 
 * Activation function
   * principles 
@@ -37,12 +53,29 @@
     * range (finite range --> stable training, infinite range --> small learning rate) 
     * continuously differentiable 
   * linear, sigmoid (nice interpretation while vanishing gradient), relu (large gradient), leaky-relu (has gradient when it is less than 0), selu (self normalized), tanh (value [-1,1], gradien is better than sigmoid), soft-plus ( log(e^x+1) ), soft-max (probability interpretation and used in cross entropy loss) 
+  * sigmoid 
+    * nice interperation
+    * gradient vanishing
+    * not symmetric to origin
+  * tanh 
+    * symmetric
+    * gradient vanishing
   * cos (solving differential equations) 
+  * relu 
+    * lead to sparse neurons, reduce redundant features while keep informative feature. speed up training and make model more expressive. 
+    * non-linear, simple (forward and backward)
+    * gradient is large (fast convergence)
+    * dead zone when < 0
+  * leaky Relu 
+    * gradient not vanishing
   * soft-max 
+    * nice probability interpretation
     * v.s. hard max 
       * soft-max can easily achieve one-hot shape (due to the exponential transform) even that feature are not so different
       * smooth approximation to one-hot coding
-      * as a result of previous item, training is much more efficient  
+      * gradient information always exits, can guide the optimizer where to learn. 
+      * know where to increase and where to reduce
+      * as a result of previous items, training is much more efficient  
     * not good for super huge amount of classes 
       * [improve](https://zhuanlan.zhihu.com/p/35027284) [2](https://blog.csdn.net/u013841196/article/details/89874937)
       * inner class variation is larger than inter class variation, so learning will not be efficient 
@@ -66,7 +99,7 @@
   * why use tanh? state value should increase or decrease. if sigmoid, only decrease. tanh \in [-1,1], represents increase and decrease. 
   - [ ] how it resolve the gradient vanishing problem? 
     * [ref](https://medium.datadriveninvestor.com/how-do-lstm-networks-solve-the-problem-of-vanishing-gradients-a6784971a577) 
-    * compared with RNN (RNN has nested sigmoid, which makes gradient vanish. lstm only has multiplicity sigmoid and has cell state, which makes the gradient flows smoothly.)
+    * compared with RNN (RNN has nested sigmoid, which makes gradient vanish easily because of the gradient saturation. lstm only has multiplicity sigmoid and has cell state, which makes the gradient flows smoothly.)
 * Dropout 
   * each input (neuron) is selected with probability p (20% ~ 50% ) (not the each weight element is randomly selected)
   * improve generalization (ultimate goal [good answer](https://stats.stackexchange.com/questions/241645/how-to-explain-dropout-regularization-in-simple-terms))
@@ -94,7 +127,7 @@
   * image -> conv -> BN -> Relu ([ref](https://zhuanlan.zhihu.com/p/94138640))
   * network slimming (L_1 norm regularizer on scale factor and applied to feature channel) 
   * usually used before activation function
-  * with stable gradient, we can use larger learning rate. 
+  * normalized input feature, stable gradient, we can use larger learning rate. 
  * word2vector
  
  * CNN 
@@ -109,10 +142,11 @@
      * size of feature map (w' = floor((W+2p-k)/s + 1)
      * receptive field 
      * [types of kernels](https://towardsdatascience.com/types-of-convolution-kernels-simplified-f040cb307c37)
-        - 1, 2, 3 D kernels 
-        - Transposed convolution
-        - Seperable convolution 
-        - Dilate convolution
+        * 1, 2, 3 D kernels 
+        * Transposed convolution
+        * Seperable convolution 
+        * Dilate convolution
+          * expand the receptive field 
         - Deformable convolution
       * small kernels v.s. large kernels
         - small -> less parameters
@@ -132,6 +166,10 @@
         * summarize the feature in a region -> robust to position variation   
         * max-pooling extract sharp features (edge, point) while average-pooling extract smooth feature
       * types (average, max, global) 
+        * global pooling 
+          * reduce dimension 
+          * produce feature for fully connected layer
+          * no parameters added 
         - [ ] soft-pool
       * parameters (size, stride, types) 
  * Residual network 
@@ -155,21 +193,32 @@
    * mean of activation should be zero
    * variance of activations should stay the same
    * types of initialization 
-     * Kaiming (zero mean, variance 2/dimension of input) good for tanh, sigmoid activation function
-     * Xavier ( zero mean, variance 1/dimension of input) good for Relu activation function 
-     * combine both (zero mean, 2/(input + output dimension)
+     * Kaiming (zero mean, variance 2/dimension of input) good for Relu activation function
+     * Xavier ( zero mean, variance 1/dimension of input) good for sigmoid, tanh activation function 
+     * combine both (zero mean, 2/(input + output dimension, harmonic mean) (back propagation leads to the gradient multiply by the output dimension. So, make forward and backward gradient stable, use the harmonic mean )
 * loss function  
   * 0-1 loss
-  * l1, l2, l_\infty
-  * KL divergence
-  * cross entropy
-  * hinge 
+    * not differentiable
+  * l1 
+    * sparse, robust to outlier
+    * not differentiable at 0 
+  * l2 (MSE)
+    * Gaussian noise
+    * sensitive to outliers (both for regression and classifiation)
   * Huber loss
+  * cross entropy (KL divergence, logistic)
+    * large penalty putted on false negative points (only incorrect label will be counted into the loss)
+    * together with logistic or soft-max makes its gradient very nice and easy
+  * Hinge 
+    * admit some outliers, can learn hard un-seperable data
   * maximal log likelihood
-  * exponential   
+  * exponential
+    * adaboost   
  * Training 
    * mini-batch(large batch-- stable gradient--high computation and storage, small unstable training loss) 
  * Optimizer 
+   * moment 
+     * introduce gradient information from other batches 
    - [ ] SGD 
    - [ ] AdaGrad
      * should take larger steps on less updated parameters (intuition: imagine sparse input features) 
@@ -194,8 +243,17 @@
    * choose right activation function
    * learning rate 
    * add regularizer 
+
+* local optimum 
+  * learning rate scheduling 
+  * find good starting point
+    * weight initializaiton 
+    * fine tuning
+   
  * Generative Adversarial Network 
-   * 
+   * min-max formula
+   * training
+     * several updates of discriminator followed by updating generator
  * Computer Vision
    * how to handle different size of input image
      * image warp 

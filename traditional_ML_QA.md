@@ -22,5 +22,6 @@
   * con
     * number of clusters is hard to determin 
     * initial points matter (image choosed two very close points as the initial centers) 
+- [ ] coding AUC
  
  

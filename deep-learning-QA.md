@@ -18,6 +18,9 @@
 * overfitting (similar to improve generalization)
 * shallow v.s. deep networks
   - [ ] number of neurons needed to fit N data samples? 
+    * n samples {(y_i, x_i), x_i \in R^d}
+      * if d > n, then one single layer is enough
+      * finite-sample expressity of dnn (2*n+d)
   * shallow 
     * need exponential neurons
     * large number of neurons need more data 
@@ -112,6 +115,29 @@
     * much stable training (at each training, pruning out parts weights. small weights are easier to train)
     * prevent co-updating of parameters
 * Batch Normalization
+  * scalar and biase term 
+    * can represent identity map 
+    * make the activation region out of the linear part to keep network's expression 
+  * reduce inner covariate shift 
+    * input distribution of each layer should remain the same. Otherwise it is hard to learn the parameter. 
+    * each batch should follow similar distribution. Otherwise the gradient varies. 
+  * when applied, the biase term is no more needed
+  * How it helps to expedite training
+    * input usually results in saturation region
+    * un-effected by the scale of the parameter 
+    * Jacobian singular values close to 1
+  * compare to the whitening (use the whole data and covariance matrix, not gradient over normalization and mean terms)
+    * make gradient explosion (y = x+b - E(x), update b will not change)
+    * covariance matrix is hard to compute 
+  * generalization 
+    * each sample depends not only on itself but others, which introduce some random noise. Thus, improve the generalization 
+  * take full advantages of BN 
+    * increase learning rate
+    * remove dropout 
+    * reduce L2 weight regularization 
+    * accelerate learning rate decay 
+    * shuffle training examples more thoroughly 
+    * reduce image distortions 
   * applied just before activation function 
   * in CNN, each element in the feature map use the same scale and biase parameter (that is why we can do acceleration of BN at inference time, also is why we can do network slimming, batch-size x width x hight elments used to compute the mean and variance) 
   * more stable training
@@ -254,6 +280,10 @@
    * min-max formula
    * training
      * several updates of discriminator followed by updating generator
+  * problem 
+    * vanishing gradient
+    * mode collaps
+    * lack of proper evaluation metric 
  * Computer Vision
    * how to handle different size of input image
      * image warp 

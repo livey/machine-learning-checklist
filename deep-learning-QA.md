@@ -104,11 +104,16 @@
     * [ref](https://medium.datadriveninvestor.com/how-do-lstm-networks-solve-the-problem-of-vanishing-gradients-a6784971a577) 
     * compared with RNN (RNN has nested sigmoid, which makes gradient vanish easily because of the gradient saturation. lstm only has multiplicity sigmoid and has cell state, which makes the gradient flows smoothly.)
 * Dropout 
-  * each input (neuron) is selected with probability p (20% ~ 50% ) (not the each weight element is randomly selected)
+  * each input (neuron) is selected with probability p (20% ~ 50% ) (not the each weight element is randomly selected); at input layer p=0.8 
+  * max-norm constraint on the weight 
+  * at training time, each sample corresponding to one drop
   * improve generalization (ultimate goal [good answer](https://stats.stackexchange.com/questions/241645/how-to-explain-dropout-regularization-in-simple-terms))
-    * prevent co-updating
+    * prevent co-adaptation
+    * introduce some noise in learning
     * ensemble learning
+    * more sparse features 
     - [ ] Bayesian approximation 
+      * produce evidence 
   * how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
   * [as Bayesian approximation](https://zhuanlan.zhihu.com/p/82108924)
   * how it works 

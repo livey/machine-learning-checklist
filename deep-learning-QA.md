@@ -204,6 +204,7 @@
         - [ ] soft-pool
       * parameters (size, stride, types) 
  * Residual network 
+   * indentity mapping (no parameters)
    * x->(relu)->(relu) + x
    * why at least two layers 
    * how it facilitate deeper networks

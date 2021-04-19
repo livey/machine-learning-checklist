@@ -74,6 +74,8 @@
   * soft-max 
     * nice probability interpretation
     * v.s. hard max 
+      * when one logit is large, it approximates max operator 
+      * gradient with respect to logits is simple (y-t, where y: true distribution, t: softmax prob.)
       * soft-max can easily achieve one-hot shape (due to the exponential transform) even that feature are not so different
       * smooth approximation to one-hot coding
       * gradient information always exits, can guide the optimizer where to learn. 
@@ -290,6 +292,10 @@
     * vanishing gradient
     * mode collaps
     * lack of proper evaluation metric 
+ 
+ * Robust learning 
+   
+
  * Computer Vision
    * how to handle different size of input image
      * image warp 

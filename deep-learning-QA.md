@@ -13,8 +13,13 @@
     * dropout     
     * early stopping ( use validation data to monitor the error, if goes up, early stopping) 
     * adversarial learning
-    * ensemble learning (bagging--reduce variance, boosting--reduce biase)
+    * ensemble learning (bagging--reduce variance, boosting--reduce bias)
     * batch normalization (mini-batch introduce some noise, which increases generalization, make the loss landscape more smooth. For a batch, if it has large variance, then the gradient is not stable. So, we can only apply small step-size. With BN, we can use larger learning rate, thus faster convergence.)
+    * two categories
+      * reduce parameters
+        * pruning, weight sharing
+      * reduce effective size of parameters 
+        * regularization, weight decay, early stop 
 * overfitting (similar to improve generalization)
 * shallow v.s. deep networks
   - [ ] number of neurons needed to fit N data samples? 
@@ -22,8 +27,9 @@
       * if d > n, then one single layer is enough
       * finite-sample expressity of dnn (2*n+d)
   * shallow 
-    * need exponential neurons
-    * large number of neurons need more data 
+    * need exponential neurons to fit for a function (not fit data samples. to fit data samples, only need 2*n+d parameters (limitted data sample universal bound))
+    * large number of neurons need more data
+    * image classifiation tend to have wider network 
   * deep 
     * more expressible 
     * less neurons 
@@ -47,7 +53,11 @@
   * multi labeled data 
     * not good using soft-max + cross entropy 
     * one v.s. all classifier 
-
+  * sample with/without replacement 
+    * without leads to faster convergence [toy example](https://stats.stackexchange.com/questions/235844/should-training-samples-randomly-drawn-for-mini-batch-training-neural-nets-be-dr)
+    * gives good metric (the network was trained x epochs)
+    * there's enough random things going on
+    * easy to implement 
 * Activation function
   * principles 
     * monotonic -- stable training 
@@ -98,7 +108,7 @@
       * soft-max should see as a whole 
     * why not max (max operation is not differentiable, max results in only optimizing one neuron, soft-max simultaneously max target and supressed un-target)
     * gradient more stable (log(exp ) seems a almost linear function, so the gradient is stable )
-
+    * not good for multi-label dataset (use one v.s. all, each output use a logistic loss)
 * LSTM 
   * [structure](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
   * why use tanh? state value should increase or decrease. if sigmoid, only decrease. tanh \in [-1,1], represents increase and decrease. 
@@ -122,13 +132,13 @@
     * much stable training (at each training, pruning out parts weights. small weights are easier to train)
     * prevent co-updating of parameters
 * Batch Normalization
-  * scalar and biase term 
+  * scalar and bias term 
     * can represent identity map 
     * make the activation region out of the linear part to keep network's expression 
   * reduce inner covariate shift 
     * input distribution of each layer should remain the same. Otherwise it is hard to learn the parameter. 
     * each batch should follow similar distribution. Otherwise the gradient varies. 
-  * when applied, the biase term is no more needed
+  * when applied, the bias term is no more needed
   * How it helps to expedite training
     * input usually results in saturation region
     * un-effected by the scale of the parameter 
@@ -146,7 +156,7 @@
     * shuffle training examples more thoroughly 
     * reduce image distortions 
   * applied just before activation function 
-  * in CNN, each element in the feature map use the same scale and biase parameter (that is why we can do acceleration of BN at inference time, also is why we can do network slimming, batch-size x width x hight elments used to compute the mean and variance) 
+  * in CNN, each element in the feature map use the same scale and bias parameter (that is why we can do acceleration of BN at inference time, also is why we can do network slimming, batch-size x width x hight elments used to compute the mean and variance) 
   * more stable training
   * generalization
   * how it works
@@ -164,13 +174,19 @@
  * word2vector
  
  * CNN 
+   * size of cnn 
+     * number of weights
+     * number of neurons 
+     * number of connections
    - [ ] premise to use CNN (data distribution is even, almost indentical?)
    * why use CNN 
      * parameter sharing (one filter should be universal useful on any part of the image) 
      * sparsity of connection (receptive field is limitted) 
    * size of feature map (w' = floor((W+2p-k)/s + 1)
    * receptive field 
- 
+   * stride v.s. pooling 
+     * large kernel size with stride do convolution and downsampling the same time 
+     * pooling: reduce the dimension and get better gradient back-propagration while loss more informaiton 
    * convolutional kernels  
      * size of feature map (w' = floor((W+2p-k)/s + 1)
      * receptive field 
@@ -204,7 +220,8 @@
           * produce feature for fully connected layer
           * no parameters added 
         - [ ] soft-pool
-      * parameters (size, stride, types) 
+      * parameters (size, stride, types)
+    * mobilenet -- wider larger input lead to higher accuracy        
  * Residual network 
    * indentity mapping (no parameters)
    * x->(relu)->(relu) + x
@@ -251,8 +268,20 @@
  * Training 
    * mini-batch(large batch-- stable gradient--high computation and storage, small unstable training loss) 
  * Optimizer 
-   * moment 
+   * momentum 
      * introduce gradient information from other batches 
+     * at large curvature direction, momentum cancel each other out. So, reduce oscillation
+     * at small curvature direction, accumulate large gradient, speed up training 
+     * escape from saddle point 
+  * learning rate 
+    * small -> slow convergence; large -> oscillation; larger -> instability 
+    * good [0.001, 0.1]
+    * use training curve to monitor 
+  * SGD 
+    * batch size 
+      * small batch needs the same computational resource as small one 
+      
+  
    - [ ] SGD 
    - [ ] AdaGrad
      * should take larger steps on less updated parameters (intuition: imagine sparse input features) 

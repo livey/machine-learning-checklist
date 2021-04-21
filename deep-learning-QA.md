@@ -70,9 +70,11 @@
     * nice interperation
     * gradient vanishing
     * not symmetric to origin
+    * linear around zero
   * tanh 
     * symmetric
     * gradient vanishing
+    * linear around zero
   * cos (solving differential equations) 
   * relu 
     * lead to sparse neurons, reduce redundant features while keep informative feature. speed up training and make model more expressive. 
@@ -84,6 +86,7 @@
   * soft-max 
     * nice probability interpretation
     * v.s. hard max 
+      * f = -z + log(sum  ), optimal z = \inf, unstable training 
       * when one logit is large, it approximates max operator 
       * gradient with respect to logits is simple (y-t, where y: true distribution, t: softmax prob.)
       * soft-max can easily achieve one-hot shape (due to the exponential transform) even that feature are not so different
@@ -97,10 +100,12 @@
       * target class will be one-hot coding, too large dimension
       * remedy 
         * hierachical
+        * center loss (enforce each lass to be more cohenrent)
         - [ ] label embbeding
         - [ ] metric learning 
       * after soft-max + cross entropy v.s. mse 
-        * cross entropy is convex, mse is not convex 
+        * mse is more sensitive to outlier 
+        * cross entropy is convex, mse is not convex (with respect to the weight parameters)
         * gradient vanishing together with sigmoid  
     * computational stability 
       * output subtract the maximal one will increase the stability (exp large value will cause overflow) 
@@ -118,7 +123,7 @@
 * Dropout 
   * each input (neuron) is selected with probability p (20% ~ 50% ) (not the each weight element is randomly selected); at input layer p=0.8 
   * max-norm constraint on the weight 
-  * at training time, each sample corresponding to one drop
+  * at training time, each sample corresponding to one drop realization
   * improve generalization (ultimate goal [good answer](https://stats.stackexchange.com/questions/241645/how-to-explain-dropout-regularization-in-simple-terms))
     * prevent co-adaptation
     * introduce some noise in learning
@@ -127,7 +132,7 @@
     - [ ] Bayesian approximation 
       * produce evidence 
   * how it is worked - drop some input features with probability p, at inference time, use all but multiply by p for the dropout layers. 
-  * [as Bayesian approximation](https://zhuanlan.zhihu.com/p/82108924)
+  - [ ] [as Bayesian approximation](https://zhuanlan.zhihu.com/p/82108924)
   * how it works 
     * much stable training (at each training, pruning out parts weights. small weights are easier to train)
     * prevent co-updating of parameters
@@ -148,6 +153,7 @@
     * covariance matrix is hard to compute 
   * generalization 
     * each sample depends not only on itself but others, which introduce some random noise. Thus, improve the generalization 
+    * the network is better trained
   * take full advantages of BN 
     * increase learning rate
     * remove dropout 
@@ -156,7 +162,7 @@
     * shuffle training examples more thoroughly 
     * reduce image distortions 
   * applied just before activation function 
-  * in CNN, each element in the feature map use the same scale and bias parameter (that is why we can do acceleration of BN at inference time, also is why we can do network slimming, batch-size x width x hight elments used to compute the mean and variance) 
+  * in CNN, each element in the feature map use the same scale and bias parameter (that is why we can do acceleration of BN at inference time, also is why we can do network slimming, batch-size x width x height elments used to compute the mean and variance) 
   * more stable training
   * generalization
   * how it works
@@ -182,27 +188,26 @@
    * why use CNN 
      * parameter sharing (one filter should be universal useful on any part of the image) 
      * sparsity of connection (receptive field is limitted) 
-   * size of feature map (w' = floor((W+2p-k)/s + 1)
    * receptive field 
    * stride v.s. pooling 
-     * large kernel size with stride do convolution and downsampling the same time 
+     * large kernel size with stride do convolution and downsampling at the same time 
      * pooling: reduce the dimension and get better gradient back-propagration while loss more informaiton 
    * convolutional kernels  
      * size of feature map (w' = floor((W+2p-k)/s + 1)
      * receptive field 
      * [types of kernels](https://towardsdatascience.com/types-of-convolution-kernels-simplified-f040cb307c37)
         * 1, 2, 3 D kernels 
-        * Transposed convolution
-        * Seperable convolution 
-        * Dilate convolution
+        * transposed convolution
+        * seperable convolution 
+        * dilate convolution
           * expand the receptive field 
-        - Deformable convolution
+        - deformable convolution
       * small kernels v.s. large kernels
         - small -> less parameters
         - stacked small -> similar perception field as large kernels, less parameters while similar performance
         - computational efficiency 
       - [ ] kernel dimension is an odd number 
-        * the output and central pixel is sysmetric to ambient serrounding 
+        * the output and central pixel is sysmetric to its ambient serrounding 
       * 1x1 kernel 
         * reduce dimension 
         * channel information sharing
@@ -273,26 +278,24 @@
      * at large curvature direction, momentum cancel each other out. So, reduce oscillation
      * at small curvature direction, accumulate large gradient, speed up training 
      * escape from saddle point 
-  * learning rate 
-    * small -> slow convergence; large -> oscillation; larger -> instability 
-    * good [0.001, 0.1]
-    * use training curve to monitor 
-  * SGD 
-    * batch size 
-      * small batch needs the same computational resource as small one 
-      
+     * SGD 
+       * batch size 
+       * small batch needs the same computational resource as large one (may grows linearly with the batch-size under a threshold)
+     * AdaGrad
+       * should take larger steps on less updated parameters (intuition: imagine sparse input features) 
+     * RMSprop 
+       * \beta_2 = 0.99 
+       * add decay factor to the sum of the gradients 
+     * Adam 
+       * add momentum for the gradient 
+       * \beta_1 = 0.9, \beta_2 = 0.999 
+     * AMSGrad 
+       * gradient accumulation are clipped 
+    * learning rate 
+      * small -> slow convergence; large -> oscillation; larger -> instability 
+      * good [0.001, 0.1]
+      * use training curve to monitor      
   
-   - [ ] SGD 
-   - [ ] AdaGrad
-     * should take larger steps on less updated parameters (intuition: imagine sparse input features) 
-   - [ ] RMSprop 
-     * \beta_2 = 0.99 
-     * add decay factor to the sum of the gradients 
-   - [ ] Adam 
-     * add momentum for the gradient 
-     * \beta_1 = 0.9, \beta_2 = 0.999 
-   - [ ] AMSGrad 
-     * gradient accumulation are clipped 
    * how to choose good optimizer
      * first try Adam 
      * SGD should attempt with good learning rate 
@@ -309,6 +312,7 @@
 
 * local optimum 
   * learning rate scheduling 
+  * batch size
   * find good starting point
     * weight initializaiton 
     * fine tuning

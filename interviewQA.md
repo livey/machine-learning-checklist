@@ -21,4 +21,5 @@ useful resources when I prepare the interview
 - [x] [competitive programming tutorial](https://www.topcoder.com/community/competitive-programming/tutorials/)
 - [ ] [算法小抄](https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/chi-pu-tao)
 ## probability 
-- [ ] [common interview QA](https://www.cnblogs.com/fanling999/p/6777335.html)
+- [ ] [common interview QA 1](https://www.cnblogs.com/fanling999/p/6777335.html)
+- [ ] [common internet company interview QA 2](https://blog.csdn.net/BertDai/article/details/78070092)

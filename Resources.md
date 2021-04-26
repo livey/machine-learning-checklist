@@ -97,7 +97,7 @@
   - [http://ufldl.stanford.edu/tutorial/](http://ufldl.stanford.edu/tutorial/)
  - [ ] [stanford cs230](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)
  - [ ] [Bayesian Deep Networks](https://www.cs.tufts.edu/comp/150BDL/2019f/)
- - [x] [Analyses of Deep Learning (Stanford STATS 385)](https://stats385.github.io/)
+ - [x] [Analysis of Deep Learning (Stanford STATS 385)](https://stats385.github.io/)
 - [ ] [Neural Networks and Deep Learning](https://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/)
 - [ ] [Roger Grosse Machine Learning Home Page](http://www.cs.toronto.edu/~rgrosse/teaching.html)
 

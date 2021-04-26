@@ -9,7 +9,7 @@
     * dataset augmentation 
     * label smoothing
     * reduce capacity (reduce depth, width; use bottleneck network. not recommended)
-    * regularization and weight decay 
+    * regularization and weight decay (regularization also reduce the unidentity of nets (consider 1/\alphaf(\alpha wx))))
     * dropout     
     * early stopping ( use validation data to monitor the error, if goes up, early stopping) 
     * adversarial learning

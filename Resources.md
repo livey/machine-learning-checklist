@@ -1,4 +1,3 @@
-### These resources I found useful are based on my EECS background. 
 **algorithms**
  - [x] tree 
   - The Elements of Statistic Learning Chap. 9.2
